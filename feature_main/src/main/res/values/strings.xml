@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">main</string>
+    <string name="title_home">Home</string>
+    <string name="title_characters">Characters</string>
+    <string name="title_houses">Houses</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

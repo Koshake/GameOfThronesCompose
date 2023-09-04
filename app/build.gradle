@@ -1,0 +1,57 @@
+plugins {
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin.android
+    alias libs.plugins.kotlin.kapt
+}
+
+android {
+    namespace 'com.koshake.gameofthronescompose'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.koshake.gameofthronescompose"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.core.ktx
+    implementation libs.dagger.api
+    implementation libs.splashscreen
+    kapt libs.dagger.compiler.kapt
+
+    // Modules
+    implementation project(':core_factory')
+    implementation project(':core_ui')
+    implementation project(':feature_main')
+    implementation project(':feature_home')
+    implementation project(':feature_home-api')
+}

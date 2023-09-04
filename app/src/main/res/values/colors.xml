@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#D2233C</color>
+    <color name="red_light">#FB4761</color>
+    <color name="orange">#FF6736</color>
+    <color name="grey_dark">#666666</color>
+    <color name="grey_middle">#999999</color>
+    <color name="grey_light">#F2F2F2</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="purple">#8865E1</color>
+    <color name="grey_bg">#F2F2F2</color>
+
+    <color name="green">#139A39</color>
+    <color name="green_light">#27AE60</color>
+    <color name="green_light2">#2FCF8C</color>
+    <color name="green_light_12_opacity">#1F2FCF8C</color>
+
+    <color name="fuel_euro_gas">#92D1FF</color>
+    <color name="fuel_euro_dt">#000000</color>
+    <color name="fuel_euro_80">#F5C000</color>
+    <color name="fuel_euro_92">#00B5C0</color>
+    <color name="fuel_euro_95">#007A0C</color>
+
+    <color name="fuel_ecto_dt">#500B95</color>
+    <color name="fuel_ecto_92">#5096FF</color>
+    <color name="fuel_ecto_95">#064FBE</color>
+    <color name="fuel_ecto_98">#ED6605</color>
+    <color name="fuel_ecto_100">#D2233C</color>
+
+    <color name="bronze">#F4E6E6</color>
+
+    <color name="bronze_gradient_start">#E7D6C7</color>
+    <color name="bronze_gradient_center">#F4E4D7</color>
+    <color name="bronze_gradient_end">#DCC0AA</color>
+
+    <color name="silver_gradient_start">#DADDDE</color>
+    <color name="silver_gradient_center">#EDEFF0</color>
+    <color name="silver_gradient_end">#D5D8D9</color>
+
+    <color name="gold_gradient_start">#EBDEC5</color>
+    <color name="gold_gradient_center">#F3E8D1</color>
+    <color name="gold_gradient_end">#E2CCA0</color>
+
+    <color name="platinum_gradient_start">#E0DBD2</color>
+    <color name="platinum_gradient_center">#F4EFE6</color>
+    <color name="platinum_gradient_end">#DAD4C9</color>
+</resources>
