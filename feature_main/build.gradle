@@ -50,6 +50,9 @@ dependencies {
     implementation libs.dagger.api
     kapt libs.dagger.compiler.kapt
 
+    //Ktor
+    implementation libs.ktor.core
+
     // Modules
     implementation project(':core_ui')
     implementation project(':core_api')

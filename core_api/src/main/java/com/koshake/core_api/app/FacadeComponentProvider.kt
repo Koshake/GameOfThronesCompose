@@ -1,3 +1,5 @@
 package com.koshake.core_api.app
 
-interface FacadeComponentProvider : AppProvider, NavGraphProvider
+import com.koshake.core_api.network.NetworkProvider
+
+interface FacadeComponentProvider : AppProvider, NavGraphProvider, NetworkProvider

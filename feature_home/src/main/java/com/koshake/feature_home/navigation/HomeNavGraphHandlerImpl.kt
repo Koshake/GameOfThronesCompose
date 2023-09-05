@@ -1,9 +1,10 @@
-package com.koshake.feature_home
+package com.koshake.feature_home.navigation
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.koshake.feature_home.HomeScreen
 import com.koshake.feature_home_api.HomeNavGraphHandler
 import javax.inject.Inject
 

@@ -14,8 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTypography
 import com.koshake.koshake.core_ui.ui.theme.view.Toolbar
+import com.koshake.koshake.core_ui.ui.theme.view.VSpacer
 
 @Composable
 internal fun HomeScreen() {
@@ -37,10 +39,17 @@ internal fun HomeScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "home",
+                text = String.format("%s:", "Person"),
+                style = GameOfThronesTypography.titleBook34,
+                textAlign = TextAlign.End
+            )
+            VSpacer(size = 24.dp)
+            Text(
+                text = "Random Quote",
                 style = GameOfThronesTypography.titleBook44,
                 textAlign = TextAlign.End
             )
+            VSpacer(size = 48.dp)
         }
     }
 }
