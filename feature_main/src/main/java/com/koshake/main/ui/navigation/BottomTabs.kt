@@ -2,7 +2,7 @@ package com.koshake.main.ui.navigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.koshake.main.R
+import com.koshake.core_ui.R
 
 enum class BottomTabs(
     @StringRes
