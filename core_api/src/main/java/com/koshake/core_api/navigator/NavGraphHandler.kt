@@ -3,15 +3,13 @@ package com.koshake.core_api.navigator
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import com.koshake.core_api.app.FacadeComponentProvider
 
 interface NavGraphHandler {
 
     fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavHostController,
-        modifier: Modifier = Modifier,
-        facadeComponentProvider: FacadeComponentProvider
+        modifier: Modifier = Modifier
     )
 
 }

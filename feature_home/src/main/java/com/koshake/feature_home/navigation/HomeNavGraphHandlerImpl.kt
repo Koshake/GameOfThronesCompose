@@ -4,7 +4,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.koshake.core_api.app.FacadeComponentProvider
+import com.koshake.core_api.base.compositionLocal.LocalFacadeComponent
 import com.koshake.feature_home.di.HomeComponentHolder
 import com.koshake.feature_home.ui.HomeScreen
 import com.koshake.feature_home_api.HomeNavGraphHandler
@@ -21,11 +21,10 @@ class HomeNavGraphHandlerImpl @Inject constructor() : HomeNavGraphHandler {
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavHostController,
-        modifier: Modifier,
-        facadeComponentProvider: FacadeComponentProvider
+        modifier: Modifier
     ) {
         navGraphBuilder.composable(homeRoute) {
-            val homeComponent = HomeComponentHolder.init(facadeComponentProvider)
+            val homeComponent = HomeComponentHolder.init(LocalFacadeComponent.current)
             HomeScreen(homeComponent.viewModelFactory)
         }
     }
