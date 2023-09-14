@@ -31,5 +31,6 @@ android {
 }
 
 dependencies {
+    implementation libs.lifecycle.viewmodel.ktx
     implementation project(':core_api')
 }

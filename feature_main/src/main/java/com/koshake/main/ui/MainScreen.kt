@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.koshake.core_api.app.FacadeComponentProvider
 import com.koshake.core_api.navigator.NavGraphHandler
 import com.koshake.koshake.core_ui.ui.theme.LocalColors
 import com.koshake.main.ui.navigation.AppNavGraph
@@ -15,7 +16,7 @@ import com.koshake.main.ui.navigation.BottomBar
 import com.koshake.main.ui.navigation.BottomTabs
 
 @Composable
-internal fun MainScreen(navGraphHandler: NavGraphHandler) {
+internal fun MainScreen(navGraphHandler: NavGraphHandler, facadeComponentProvider: FacadeComponentProvider) {
     val tabs = remember { BottomTabs.values() }
     val navController = rememberNavController()
     Scaffold(
@@ -28,7 +29,8 @@ internal fun MainScreen(navGraphHandler: NavGraphHandler) {
         AppNavGraph(
             navController = navController,
             modifier = Modifier.padding(innerPaddingModifier),
-            homeNavGraphHandler = navGraphHandler
+            homeNavGraphHandler = navGraphHandler,
+            facadeComponentProvider = facadeComponentProvider
         )
     }
 }

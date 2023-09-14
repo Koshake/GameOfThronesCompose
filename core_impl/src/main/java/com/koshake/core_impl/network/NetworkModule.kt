@@ -1,6 +1,5 @@
 package com.koshake.core_impl.network
 
-import android.util.Log
 import dagger.Module
 import dagger.Provides
 import io.ktor.client.HttpClient
@@ -19,14 +18,14 @@ import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import io.ktor.http.URLProtocol
 import kotlinx.serialization.json.Json
+import timber.log.Timber
 import javax.inject.Singleton
 
-// TODO replace logger (Timber)
 @Module
 class NetworkModule {
     companion object {
         private const val TIME_OUT = 60_000
-        private const val BASE_URL = "https://api.gameofthronesquotes.xyz"
+        private const val BASE_URL = "api.gameofthronesquotes.xyz"
 
         @Singleton
         @Provides
@@ -54,7 +53,7 @@ class NetworkModule {
                 install(Logging) {
                     logger = object : Logger {
                         override fun log(message: String) {
-                            Log.v("Logger Ktor =>", message)
+                            Timber.d("Logger Ktor => %s", message)
                         }
 
                     }
@@ -63,7 +62,7 @@ class NetworkModule {
 
                 install(ResponseObserver) {
                     onResponse { response ->
-                        Log.d("HTTP status:", "${response.status.value}")
+                        Timber.d("HTTP status: => %s", response.status.value)
                     }
                 }
 

@@ -8,4 +8,5 @@ object GameOfThronesDimension {
     val layoutMainMargin: Dp = 16.dp
     val toolbarHorizontalMargin: Dp = 20.dp
     val minTouchSize: Dp = 48.dp
+    val bottomBarHeight: Dp = 56.dp
 }

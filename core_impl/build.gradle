@@ -41,6 +41,13 @@ dependencies {
     //Ktor
     implementation libs.bundles.ktor
 
+    //Timber
+    implementation libs.timber
+
+    implementation libs.lifecycle.viewmodel.ktx
+
+    implementation libs.bundles.compose
+
     implementation project(':core_api')
 
 }

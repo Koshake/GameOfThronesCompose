@@ -7,7 +7,9 @@ import com.koshake.core_api.network.NetworkProvider
 import com.koshake.core_factory.CoreProvidersFactory
 import com.koshake.feature_home.di.CreateHomeExternalModule
 import dagger.Component
+import javax.inject.Singleton
 
+@Singleton
 @Component(
     dependencies = [AppProvider::class, NetworkProvider::class],
     modules = [CreateHomeExternalModule::class]

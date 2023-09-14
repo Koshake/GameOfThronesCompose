@@ -8,6 +8,6 @@ import javax.inject.Inject
 class HomeApi @Inject constructor(private val client: HttpClient) : IHomeApi {
 
     override suspend fun getRandomQuote(): RandomQuoteResponse =
-        client.get("v1/random")
+        client.get("/v1/random")
 
 }

@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 import com.koshake.koshake.core_ui.ui.theme.LocalColors
 import java.util.Locale
@@ -30,7 +31,7 @@ internal fun BottomBar(navController: NavController, tabs: Array<BottomTabs>) {
 
     if (currentRoute in routes) {
         BottomNavigation(
-            modifier = Modifier.height(56.dp),
+            modifier = Modifier.height(GameOfThronesDimension.bottomBarHeight),
             backgroundColor = GameOfThronesTheme.colors.bottomBarColor
         ) {
             tabs.forEach { tab ->

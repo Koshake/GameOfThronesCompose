@@ -50,6 +50,8 @@ dependencies {
     //Ktor
     implementation libs.ktor.core
 
+    implementation libs.lifecycle.viewmodel.ktx
+
     // Modules
     implementation project(':core_factory')
     implementation project(':core_ui')

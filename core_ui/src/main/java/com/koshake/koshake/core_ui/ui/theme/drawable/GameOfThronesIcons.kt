@@ -8,5 +8,6 @@ import com.koshake.core_ui.R
 object GameOfThronesIcons {
     val Back: Painter @Composable get() = painterResource(R.drawable.icon_back)
     val Home: Painter @Composable get() = painterResource(R.drawable.ic_home)
-    val CheckMark: Painter @Composable get() = painterResource(R.drawable.ic_list)
+    val List: Painter @Composable get() = painterResource(R.drawable.ic_list)
+    val Error: Painter @Composable get() = painterResource(R.drawable.icon_error)
 }

@@ -17,6 +17,7 @@ fragmentKtx = "1.5.5"
 preferenceKtx = "1.1.1"
 navigation = "2.5.3"
 coroutines = "1.6.4"
+timber = "4.7.1"
 
 junit = "4.13.2"
 junitAndroidX = "1.1.3"
@@ -94,11 +95,15 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 
 gradle-api = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
 
+# KTOR
 ktor-json-jvm = { group = "io.ktor", name = "ktor-client-json", version.ref = "ktor" }
 ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 ktor-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor" }
 ktor-logging = { group = "io.ktor", name = "ktor-client-logging-jvm", version.ref = "ktor" }
 ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+
+# Logging
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 [bundles]
 
