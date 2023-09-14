@@ -14,5 +14,6 @@ interface MainModule {
         fun provideHomeNavGraph(map: Map<Class<*>, @JvmSuppressWildcards Provider<Any>>): HomeNavGraphHandler {
             return map[HomeNavGraphHandler::class.java]!!.get() as HomeNavGraphHandler
         }
+
     }
 }

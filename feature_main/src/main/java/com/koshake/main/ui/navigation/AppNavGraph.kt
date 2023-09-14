@@ -11,8 +11,7 @@ import com.koshake.feature_home_api.HomeNavGraphHandler
 fun AppNavGraph(
     homeNavGraphHandler: NavGraphHandler,
     navController: NavHostController,
-    modifier: Modifier = Modifier,
-
+    modifier: Modifier = Modifier
 ) {
     NavHost(navController = navController, startDestination = (homeNavGraphHandler as HomeNavGraphHandler).homeRoute) {
         register(

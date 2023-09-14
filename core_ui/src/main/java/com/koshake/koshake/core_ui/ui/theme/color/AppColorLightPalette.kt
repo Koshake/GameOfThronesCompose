@@ -1,8 +1,14 @@
 package com.koshake.koshake.core_ui.ui.theme.color
 
+private val gradientToolbarLight = GradientColor(
+    colorStart = AppColor.White,
+    colorCenter = AppColor.GrayLight,
+    colorEnd = AppColor.GrayBright
+)
+
 val AppColorLightPalette: AppThemeColors = AppThemeColors(
     isLight = true,
-    active = AppColor.Green,
+    active = AppColor.White,
     backgroundPrimary = AppColor.White,
     backgroundSecondary = AppColor.GrayBG,
     backgroundTabbar = AppColor.Black,
@@ -25,5 +31,8 @@ val AppColorLightPalette: AppThemeColors = AppThemeColors(
     textPrimary = AppColor.Black,
     textPrimaryDisabled = AppColor.GrayDark,
     textSecondary = AppColor.GrayMiddle,
-    textTertiary = AppColor.White
+    textTertiary = AppColor.White,
+    textToolbar = AppColor.Black,
+    toolbarColor = gradientToolbarLight,
+    bottomBarColor = AppColor.SilverQuick
 )

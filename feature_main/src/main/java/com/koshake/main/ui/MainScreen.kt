@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.koshake.core_api.app.FacadeComponentProvider
 import com.koshake.core_api.navigator.NavGraphHandler
 import com.koshake.koshake.core_ui.ui.theme.LocalColors
 import com.koshake.main.ui.navigation.AppNavGraph

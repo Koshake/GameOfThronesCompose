@@ -38,4 +38,7 @@ dependencies {
     //Dagger
     implementation libs.dagger.api
 
+    //Ktor
+    implementation libs.ktor.core
+
 }

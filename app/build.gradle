@@ -47,6 +47,10 @@ dependencies {
     implementation libs.dagger.api
     implementation libs.splashscreen
     kapt libs.dagger.compiler.kapt
+    //Ktor
+    implementation libs.ktor.core
+
+    implementation libs.lifecycle.viewmodel.ktx
 
     // Modules
     implementation project(':core_factory')

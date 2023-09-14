@@ -1,6 +1,6 @@
 package com.koshake.feature_home.di
 
-import com.koshake.feature_home.HomeNavGraphHandlerImpl
+import com.koshake.feature_home.navigation.HomeNavGraphHandlerImpl
 import com.koshake.feature_home_api.HomeNavGraphHandler
 import dagger.Binds
 import dagger.Module

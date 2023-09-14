@@ -8,7 +8,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [MainModule::class],
-    dependencies = [FacadeComponentProvider::class]
+    dependencies = [FacadeComponentProvider::class,]
 )
 interface MainComponent {
 

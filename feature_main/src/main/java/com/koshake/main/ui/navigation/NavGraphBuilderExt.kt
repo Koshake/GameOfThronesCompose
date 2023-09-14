@@ -8,7 +8,7 @@ import com.koshake.core_api.navigator.NavGraphHandler
 fun NavGraphBuilder.register(
     navGraph: NavGraphHandler,
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     navGraph.registerGraph(
         navGraphBuilder = this,

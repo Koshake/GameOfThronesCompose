@@ -23,7 +23,7 @@ fun GameOfThronesComposeTheme(darkTheme: Boolean = isSystemInDarkTheme(), conten
     }
 
     MaterialTheme(
-            typography = Typography,
+            typography = MaterialTypography,
             shapes = Shapes
     ) {
         CompositionLocalProvider(
