@@ -16,7 +16,10 @@ import com.koshake.main.ui.navigation.BottomBar
 import com.koshake.main.ui.navigation.BottomTabs
 
 @Composable
-internal fun MainScreen(navGraphHandler: NavGraphHandler) {
+internal fun MainScreen(
+    homeNavGraphHandler: NavGraphHandler,
+    listNavGraphHandler: NavGraphHandler
+) {
     val tabs = remember { BottomTabs.values() }
     val navController = rememberNavController()
     Scaffold(
@@ -29,7 +32,8 @@ internal fun MainScreen(navGraphHandler: NavGraphHandler) {
         AppNavGraph(
             navController = navController,
             modifier = Modifier.padding(innerPaddingModifier),
-            homeNavGraphHandler = navGraphHandler
+            homeNavGraphHandler = homeNavGraphHandler,
+            listNavGraphHandler = listNavGraphHandler
         )
     }
 }

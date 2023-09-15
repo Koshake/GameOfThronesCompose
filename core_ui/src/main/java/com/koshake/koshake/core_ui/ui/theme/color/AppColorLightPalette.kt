@@ -12,6 +12,7 @@ val AppColorLightPalette: AppThemeColors = AppThemeColors(
     backgroundPrimary = AppColor.White,
     backgroundSecondary = AppColor.GrayBG,
     backgroundTabbar = AppColor.Black,
+    cardBackground = AppColor.SilverQuick,
     buttonPrimary = AppColor.Red,
     buttonPrimaryDisabled = AppColor.GrayLight,
     buttonPrimaryPressed = AppColor.RedDark,
@@ -34,5 +35,5 @@ val AppColorLightPalette: AppThemeColors = AppThemeColors(
     textTertiary = AppColor.White,
     textToolbar = AppColor.Black,
     toolbarColor = gradientToolbarLight,
-    bottomBarColor = AppColor.SilverQuick
+    bottomBarColor = AppColor.GrayDark
 )
