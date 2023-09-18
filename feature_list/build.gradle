@@ -52,8 +52,8 @@ dependencies {
 
     //Timber
     implementation libs.timber
+    implementation project(':feature_list-api')
 
-    implementation project(':feature_list_api')
     implementation project(':core_api')
     implementation project(':core_ui')
     implementation project(':viewmodel_base')

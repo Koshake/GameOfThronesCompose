@@ -58,6 +58,6 @@ dependencies {
     implementation project(':feature_main')
     implementation project(':feature_home')
     implementation project(':feature_home-api')
-    implementation project(':feature_list_api')
+    implementation project(':feature_list-api')
     implementation project(':feature_list')
 }
