@@ -10,6 +10,7 @@ data class AppThemeColors(
     val backgroundPrimary: Color,
     val backgroundSecondary: Color,
     val backgroundTabbar: Color,
+    val cardBackground: Color,
     val buttonPrimary: Color,
     val buttonPrimaryDisabled: Color,
     val buttonPrimaryPressed: Color,

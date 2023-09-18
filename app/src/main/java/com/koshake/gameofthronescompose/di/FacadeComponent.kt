@@ -6,13 +6,14 @@ import com.koshake.core_api.app.FacadeComponentProvider
 import com.koshake.core_api.network.NetworkProvider
 import com.koshake.core_factory.CoreProvidersFactory
 import com.koshake.feature_home.di.CreateHomeExternalModule
+import com.koshake.feature_list.di.CreateHousesListExternalModule
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     dependencies = [AppProvider::class, NetworkProvider::class],
-    modules = [CreateHomeExternalModule::class]
+    modules = [CreateHomeExternalModule::class, CreateHousesListExternalModule::class]
 )
 interface FacadeComponent : FacadeComponentProvider {
 

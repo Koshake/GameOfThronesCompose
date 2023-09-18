@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_home">Home</string>
-    <string name="title_characters">Characters</string>
-    <string name="title_houses">Houses</string>
+    <string name="title_home">Главная</string>
+    <string name="title_characters">Герои</string>
+    <string name="title_houses">Найти цитату</string>
+    <string name="something_went_wrong">Что-то пошло не так</string>
+    <string name="refresh">Обновить</string>
+    <string name="error_message">Попробуйте обновить или зайти чуть позже.</string>
 </resources>

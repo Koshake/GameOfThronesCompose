@@ -17,6 +17,7 @@ val AppColorDarkPalette: AppThemeColors = AppThemeColors(
     active = AppColor.White,
     backgroundPrimary = AppColor.Black,
     backgroundSecondary = AppColor.BlackSmoky,
+    cardBackground = AppColor.GrayMiddle,
     backgroundTabbar = AppColor.Black_10,
     buttonPrimary = AppColor.Red,
     buttonPrimaryDisabled = AppColor.Gray,

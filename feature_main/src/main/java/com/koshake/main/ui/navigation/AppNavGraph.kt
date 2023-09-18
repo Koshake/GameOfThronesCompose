@@ -10,6 +10,7 @@ import com.koshake.feature_home_api.HomeNavGraphHandler
 @Composable
 fun AppNavGraph(
     homeNavGraphHandler: NavGraphHandler,
+    listNavGraphHandler: NavGraphHandler,
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
@@ -20,6 +21,10 @@ fun AppNavGraph(
             modifier = modifier
         )
 
-        // TODO Add Houses list screen
+        register(
+            navGraph = listNavGraphHandler,
+            navController = navController,
+            modifier = modifier
+        )
     }
 }
