@@ -4,12 +4,12 @@ import com.koshake.core_api.entity.Name
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class PersonResponse(
+data class NameResponse(
     val name: String,
     val slug: String
 )
 
-fun PersonResponse.toName() =
+fun NameResponse.toName() =
     Name(
         name = name,
         slug = slug
