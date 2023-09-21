@@ -1,8 +1,10 @@
 package com.koshake.feature_list.ui
 
+import androidx.navigation.NavHostController
+
 interface HousesListController {
 
     fun onRefresh()
 
-    fun onListItemClicked(item: HousesItem)
+    fun onListItemClicked(navController: NavHostController, item: HousesItem)
 }

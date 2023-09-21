@@ -1,7 +1,8 @@
 package com.koshake.feature_home.domain
 
-import com.koshake.feature_home.data.model.Name
+import com.koshake.core_api.entity.Name
 import com.koshake.feature_home.data.model.RandomQuoteResponse
+import com.koshake.feature_home.data.model.toName
 
 data class RandomQuote(
     val sentence: String,
@@ -12,6 +13,6 @@ data class RandomQuote(
 fun RandomQuoteResponse.toRandomQuote() =
     RandomQuote(
         sentence = sentence ?: "",
-        character = character,
-        house = house
+        character = character?.toName(),
+        house = house?.toName()
     )

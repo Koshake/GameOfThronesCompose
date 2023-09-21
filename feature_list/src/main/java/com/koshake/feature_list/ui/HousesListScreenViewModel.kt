@@ -1,10 +1,12 @@
 package com.koshake.feature_list.ui
 
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavHostController
 import com.koshake.core_api.base.StatefulViewModel
 import com.koshake.core_api.base.onEachContent
 import com.koshake.core_api.base.onEachError
-import com.koshake.feature_list.domain.HousesListRepository
+import com.koshake.feature_list.domain.repository.HousesListRepository
+import com.koshake.feature_list.navigation.navigateToCharactersList
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
@@ -41,8 +43,10 @@ class HousesListScreenViewModel @Inject constructor(
         getHousesList()
     }
 
-    override fun onListItemClicked(item: HousesItem) {
+    override fun onListItemClicked(navController: NavHostController, item: HousesItem) {
+        navigateToCharactersList(navController = navController, members = item.houseSlug)
     }
+
 }
 
 data class ListScreenState(

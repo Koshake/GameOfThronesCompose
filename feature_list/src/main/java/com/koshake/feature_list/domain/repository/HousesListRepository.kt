@@ -1,4 +1,4 @@
-package com.koshake.feature_list.domain
+package com.koshake.feature_list.domain.repository
 
 import com.koshake.feature_list.domain.model.HousesEntity
 import com.koshake.core_api.base.Result

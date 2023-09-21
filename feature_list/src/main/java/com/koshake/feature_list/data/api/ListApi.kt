@@ -9,5 +9,8 @@ class ListApi @Inject constructor(private val client: HttpClient) : IListApi {
 
     override suspend fun getHouses(): List<HousesResponse> =
         client.get("/v1/houses")
+
+    override suspend fun getCharacters(houseSlug: String): List<HousesResponse> =
+        client.get("/v1/house/$houseSlug")
 }
 

@@ -5,7 +5,7 @@ import androidx.compose.ui.unit.dp
 
 object GameOfThronesDimension {
     val layoutHorizontalMargin: Dp = 16.dp
-    val layoutMainMargin: Dp = 16.dp
+    val layoutMainPadding: Dp = 8.dp
     val toolbarHorizontalMargin: Dp = 20.dp
     val minTouchSize: Dp = 48.dp
     val bottomBarHeight: Dp = 56.dp

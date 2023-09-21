@@ -1,6 +1,8 @@
 package com.koshake.feature_home.di
 
 import androidx.lifecycle.ViewModel
+import com.koshake.feature_home.data.api.HomeApi
+import com.koshake.feature_home.data.api.IHomeApi
 import com.koshake.feature_home.data.repository.HomeRepositoryImpl
 import com.koshake.feature_home.domain.HomeRepository
 import com.koshake.feature_home.ui.HomeViewModel
@@ -16,6 +18,10 @@ interface HomeModule {
     @Binds
     @Singleton
     fun bindsHomeRepository(homeRepository: HomeRepositoryImpl): HomeRepository
+
+    @Binds
+    @Singleton
+    fun bindsHomeApi(homeApi: HomeApi): IHomeApi
 
     @Binds
     @IntoMap

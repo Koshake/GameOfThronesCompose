@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class RandomQuoteResponse(
     val sentence: String? = null,
-    val character: Name? = null,
-    val house: Name? = null,
+    val character: PersonResponse? = null,
+    val house: PersonResponse? = null,
 )
 

@@ -1,4 +1,4 @@
-package com.koshake.feature_list.ui
+package com.koshake.feature_list.ui.characters
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,26 +12,28 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
+import com.koshake.core_ui.R
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
-import com.koshake.koshake.core_ui.ui.theme.view.ErrorStub
-import com.koshake.koshake.core_ui.ui.theme.view.LoaderLayout
 import com.koshake.koshake.core_ui.ui.theme.view.Toolbar
 import com.koshake.koshake.core_ui.ui.theme.view.VSpacer
+import com.koshake.viewmodel_base.viewmodel.ViewModelAssistedFactory
+import com.koshake.viewmodel_base.viewmodel.assistedViewModel
 
 @Composable
-fun ListScreen(
-    viewModelFactory: ViewModelProvider.Factory,
-    navHostController: NavHostController,
-    viewModel: HousesListScreenViewModel = viewModel(factory = viewModelFactory),
+fun CharactersScreen(
+    house: String,
+    viewModelFactory: ViewModelAssistedFactory
 ) {
+
+    val viewModelAssistedFactory = remember<CharactersViewModel.Factory> { viewModelFactory.assistedViewModelFactory() }
+    val viewModel = assistedViewModel { viewModelAssistedFactory.create(house) }
     val state = viewModel.stateFlow.collectAsState()
+
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
@@ -41,34 +43,29 @@ fun ListScreen(
             .padding(bottom = GameOfThronesDimension.bottomBarHeight),
         topBar = {
             Toolbar(
-                title = stringResource(com.koshake.core_ui.R.string.title_houses)
+                title = stringResource(R.string.title_characters)
             )
         }
     ) {
-        when {
-            state.value.isLoading -> LoaderLayout(showLoader = true)
-            state.value.isError -> ErrorStub(modifier = Modifier.fillMaxSize(), onRefreshClicked = viewModel::onRefresh)
-            else -> ListScreenContent(
-                state = state.value,
-                navHostController = navHostController,
-                listScreenController = viewModel,
-                modifier = Modifier.fillMaxSize()
-            )
-        }
+        ListScreenContent(
+            state = state.value,
+            modifier = Modifier.fillMaxSize(),
+            onItemClicked = viewModel::onListItemClicked
+        )
     }
 }
 
 @Composable
-private fun ListScreenContent(state: ListScreenState, listScreenController: HousesListController, navHostController: NavHostController, modifier: Modifier) {
+private fun ListScreenContent(state: CharactersScreenState, modifier: Modifier, onItemClicked: (CharacterItem) -> Unit) {
     LazyColumn(modifier = modifier, contentPadding = PaddingValues(12.dp)) {
-        items(state.housesList) { house ->
+        items(state.charactersList) { character ->
             VSpacer(size = 12.dp)
-            HousesListItem(
-                title = house.houseName,
-                icon = house.icon,
+            CharactersListItem(
+                title = character.name.name,
+                subtitle = character.name.slug,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                listScreenController.onListItemClicked(navController = navHostController, item = house)
+                onItemClicked.invoke(character)
             }
         }
     }
