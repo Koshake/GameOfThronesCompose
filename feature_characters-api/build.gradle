@@ -1,11 +1,10 @@
 plugins {
     alias libs.plugins.android.library
     alias libs.plugins.kotlin.android
-    alias libs.plugins.kotlin.kapt
 }
 
 android {
-    namespace 'com.koshake.viewmodel_base'
+    namespace 'com.koshake.feature_characters_api'
     compileSdk 33
 
     defaultConfig {
@@ -29,23 +28,9 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
-    }
-
-    buildFeatures {
-        compose true
-    }
 }
 
 dependencies {
-    //Dagger
-    implementation libs.dagger.api
-    kapt libs.dagger.compiler.kapt
-
-    //Compose
-    implementation libs.bundles.compose
-
     implementation libs.lifecycle.viewmodel.ktx
+    implementation project(':core_api')
 }

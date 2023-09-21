@@ -1,6 +1,8 @@
 plugins {
     alias libs.plugins.android.library
     alias libs.plugins.kotlin.android
+    alias libs.plugins.kotlin.kapt
+    alias libs.plugins.kotlin.serialization
 }
 
 android {
@@ -13,6 +15,14 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.7"
+    }
+
+    buildFeatures {
+        compose true
     }
 
     buildTypes {
@@ -31,5 +41,21 @@ android {
 }
 
 dependencies {
+    implementation libs.core.ktx
+    implementation libs.bundles.compose
+    implementation libs.bundles.ktor
 
+    implementation libs.lifecycle.viewmodel.ktx
+
+    //Dagger
+    implementation libs.dagger.api
+    kapt libs.dagger.compiler.kapt
+
+    //Timber
+    implementation libs.timber
+
+    implementation project(':feature_characters-api')
+    implementation project(':core_api')
+    implementation project(':core_ui')
+    implementation project(':viewmodel_base')
 }

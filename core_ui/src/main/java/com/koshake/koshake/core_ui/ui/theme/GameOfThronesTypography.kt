@@ -57,6 +57,13 @@ object GameOfThronesTypography {
         fontSize = 24.sp,
         lineHeight = 30.sp,
     )
+
+    val textBook24Bold = defaultStyle.copy(
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        lineHeight = 30.sp,
+    )
+
     val textMedium18 = defaultStyle.copy(
         fontWeight = MediumWeight,
         fontSize = 18.sp,

@@ -4,6 +4,7 @@ import android.app.Application
 import com.koshake.core_api.app.AppWithFacade
 import com.koshake.core_api.app.FacadeComponentProvider
 import com.koshake.gameofthronescompose.di.FacadeComponent
+import timber.log.Timber
 
 class App: Application(), AppWithFacade {
 
@@ -20,5 +21,9 @@ class App: Application(), AppWithFacade {
     override fun onCreate() {
         super.onCreate()
         getFacade()
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }

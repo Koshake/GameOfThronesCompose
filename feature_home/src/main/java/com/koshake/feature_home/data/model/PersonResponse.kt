@@ -1,4 +1,4 @@
-package com.koshake.feature_list.data.model
+package com.koshake.feature_home.data.model
 
 import com.koshake.core_api.entity.Name
 import kotlinx.serialization.Serializable
@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class PersonResponse(
     val name: String,
-    val slug: String
+    val slug: String,
 )
 
 fun PersonResponse.toName() =
@@ -14,5 +14,3 @@ fun PersonResponse.toName() =
         name = name,
         slug = slug
     )
-
-

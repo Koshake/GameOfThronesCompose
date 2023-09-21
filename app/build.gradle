@@ -52,6 +52,9 @@ dependencies {
 
     implementation libs.lifecycle.viewmodel.ktx
 
+    //Timber
+    implementation libs.timber
+
     // Modules
     implementation project(':core_factory')
     implementation project(':core_ui')
