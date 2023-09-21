@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTypography
 import com.koshake.koshake.core_ui.ui.theme.Shapes
@@ -37,7 +38,7 @@ internal fun HousesListItem(title: String, @DrawableRes icon: Int?, modifier: Mo
             Text(
                 text = title,
                 style = GameOfThronesTypography.titleBook28,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(GameOfThronesDimension.layoutMainPadding)
             )
         }
     }

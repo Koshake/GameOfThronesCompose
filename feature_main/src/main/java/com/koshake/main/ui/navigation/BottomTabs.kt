@@ -16,7 +16,7 @@ enum class BottomTabs(
         R.drawable.ic_home,
         "home" // добавить через di
     ),
-    SETTINGS(
+    LIST(
         R.string.title_houses,
         R.drawable.ic_list,
         "houses" // добавить через di

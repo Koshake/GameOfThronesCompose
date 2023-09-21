@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTypography
 import com.koshake.koshake.core_ui.ui.theme.Shapes
@@ -28,13 +29,21 @@ internal fun CharactersListItem(title: String, subtitle: String, modifier: Modif
             Text(
                 text = title,
                 style = GameOfThronesTypography.textBook24Bold,
-                modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
+                modifier = Modifier.padding(
+                    start = GameOfThronesDimension.layoutMainPadding,
+                    end = GameOfThronesDimension.layoutMainPadding,
+                    top = GameOfThronesDimension.layoutMainPadding
+                )
             )
             VSpacer(size = 16.dp)
             Text(
                 text = subtitle,
                 style = GameOfThronesTypography.captionBook14,
-                modifier = Modifier.padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
+                modifier = Modifier.padding(
+                    start = GameOfThronesDimension.layoutMainPadding,
+                    end = GameOfThronesDimension.layoutMainPadding,
+                    bottom = GameOfThronesDimension.layoutMainPadding
+                )
             )
         }
     }
