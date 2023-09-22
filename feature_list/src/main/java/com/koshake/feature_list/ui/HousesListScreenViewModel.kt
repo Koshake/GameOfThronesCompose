@@ -9,6 +9,7 @@ import com.koshake.feature_list.domain.repository.HousesListRepository
 import com.koshake.feature_list.navigation.navigateToCharactersList
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.serialization.json.Json
 import timber.log.Timber
 import javax.inject.Inject
 

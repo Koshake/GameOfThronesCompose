@@ -205,7 +205,7 @@ enum class NavigationIcon(
 ) {
     Back(
         painter = { GameOfThronesIcons.Back },
-        innerPadding = 8.dp,
+        innerPadding = 4.dp,
     );
 
     @Composable

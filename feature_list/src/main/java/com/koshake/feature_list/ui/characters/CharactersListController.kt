@@ -5,4 +5,6 @@ import androidx.navigation.NavHostController
 interface CharactersListController {
 
     fun onListItemClicked(navHostController: NavHostController, item: CharacterItem)
+
+    fun onRefresh()
 }

@@ -2,6 +2,7 @@
 <resources>
     <string name="title_home">Главная</string>
     <string name="title_characters">Герои</string>
+    <string name="quotes_characters">Цитаты героя %s</string>
     <string name="title_houses">Найти цитату</string>
     <string name="something_went_wrong">Что-то пошло не так</string>
     <string name="refresh">Обновить</string>

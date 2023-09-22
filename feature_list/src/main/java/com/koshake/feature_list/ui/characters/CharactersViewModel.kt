@@ -12,6 +12,8 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import timber.log.Timber
 
 class CharactersViewModel @AssistedInject constructor(
@@ -43,7 +45,12 @@ class CharactersViewModel @AssistedInject constructor(
     }
 
     override fun onListItemClicked(navHostController: NavHostController, item: CharacterItem) {
-        navigateToQuotesList(navController = navHostController, slug = item.name.slug)
+        val characterFullNameEncoded = Json.encodeToString(item.name)
+        navigateToQuotesList(navController = navHostController, encodedName = characterFullNameEncoded)
+    }
+
+    override fun onRefresh() {
+        getCharactersList(state.house)
     }
 
     @AssistedFactory

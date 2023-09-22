@@ -19,11 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.koshake.core_ui.R
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTypography
 import com.koshake.koshake.core_ui.ui.theme.Shapes
+import com.koshake.koshake.core_ui.ui.theme.view.ErrorStub
+import com.koshake.koshake.core_ui.ui.theme.view.LoaderLayout
+import com.koshake.koshake.core_ui.ui.theme.view.NavigationIcon
 import com.koshake.koshake.core_ui.ui.theme.view.Toolbar
 import com.koshake.koshake.core_ui.ui.theme.view.VSpacer
 import com.koshake.viewmodel_base.viewmodel.ViewModelAssistedFactory
@@ -32,7 +36,8 @@ import com.koshake.viewmodel_base.viewmodel.assistedViewModel
 @Composable
 fun QuotesListScreen(
     name: String,
-    viewModelFactory: ViewModelAssistedFactory
+    viewModelFactory: ViewModelAssistedFactory,
+    navHostController: NavHostController
 ) {
     val viewModelAssistedFactory = remember<QuotesListViewModel.Factory> { viewModelFactory.assistedViewModelFactory() }
     val viewModel = assistedViewModel { viewModelAssistedFactory.create(name) }
@@ -47,14 +52,22 @@ fun QuotesListScreen(
             .padding(bottom = GameOfThronesDimension.bottomBarHeight),
         topBar = {
             Toolbar(
-                title = stringResource(R.string.title_characters)
+                navigationIcon = NavigationIcon.Back,
+                onNavigationClick = { navHostController.popBackStack() },
+                title = stringResource(R.string.quotes_characters, state.value.characterName.name)
             )
         }
     ) {
-        QuotesScreenContent(
-            state = state.value,
-            modifier = Modifier.fillMaxSize(),
-        )
+        when {
+            state.value.isLoading -> LoaderLayout(showLoader = true)
+            state.value.isError -> ErrorStub(modifier = Modifier.fillMaxSize(), onRefreshClicked = viewModel::onRefresh)
+            else -> {
+                QuotesScreenContent(
+                    state = state.value,
+                    modifier = Modifier.fillMaxSize(),
+                )
+            }
+        }
     }
 }
 

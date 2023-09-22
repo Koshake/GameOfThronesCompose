@@ -78,8 +78,9 @@ class ListNavGraphHandlerImpl @Inject constructor() : ListNavGraphHandler {
                 val listComponent = ListComponentHolder.init(LocalFacadeComponent.current)
 
                 QuotesListScreen(
+                    name = arguments.orEmpty(),
                     viewModelFactory = listComponent.viewModelAssistedFactory,
-                    name = arguments.orEmpty()
+                    navHostController = navController
                 )
             }
         }
@@ -89,5 +90,5 @@ class ListNavGraphHandlerImpl @Inject constructor() : ListNavGraphHandler {
 internal fun HousesListScreenViewModel.navigateToCharactersList(navController: NavHostController, members: String) =
     navController.navigate(route = "${CHARACTERS_LIST_ROUTE}/$members")
 
-internal fun CharactersViewModel.navigateToQuotesList(navController: NavHostController, slug: String) =
-    navController.navigate(route = "${QUOTES_LIST_ROUTE}/$slug")
+internal fun CharactersViewModel.navigateToQuotesList(navController: NavHostController, encodedName: String) =
+    navController.navigate(route = "${QUOTES_LIST_ROUTE}/$encodedName")

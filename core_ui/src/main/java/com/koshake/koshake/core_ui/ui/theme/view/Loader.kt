@@ -20,7 +20,7 @@ import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 @Composable
 fun Loader(
     modifier: Modifier = Modifier,
-    color: Color = GameOfThronesTheme.colors.buttonPrimary,
+    color: Color = GameOfThronesTheme.colors.loaderColor,
     backgroundColor: Color = GameOfThronesTheme.colors.backgroundPrimary,
     strokeWidth: Dp = 4.dp,
 ) {

@@ -20,6 +20,9 @@ import androidx.navigation.NavHostController
 import com.koshake.core_ui.R
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
+import com.koshake.koshake.core_ui.ui.theme.view.ErrorStub
+import com.koshake.koshake.core_ui.ui.theme.view.LoaderLayout
+import com.koshake.koshake.core_ui.ui.theme.view.NavigationIcon
 import com.koshake.koshake.core_ui.ui.theme.view.Toolbar
 import com.koshake.koshake.core_ui.ui.theme.view.VSpacer
 import com.koshake.viewmodel_base.viewmodel.ViewModelAssistedFactory
@@ -45,16 +48,25 @@ fun CharactersScreen(
             .padding(bottom = GameOfThronesDimension.bottomBarHeight),
         topBar = {
             Toolbar(
+                navigationIcon = NavigationIcon.Back,
+                onNavigationClick = { navHostController.popBackStack() },
                 title = stringResource(R.string.title_characters)
             )
         }
     ) {
-        ListScreenContent(
-            state = state.value,
-            modifier = Modifier.fillMaxSize(),
-            charactersListController = viewModel,
-            navHostController = navHostController
-        )
+
+        when {
+            state.value.isLoading -> LoaderLayout(showLoader = true)
+            state.value.isError -> ErrorStub(modifier = Modifier.fillMaxSize(), onRefreshClicked = viewModel::onRefresh)
+            else -> {
+                ListScreenContent(
+                    state = state.value,
+                    modifier = Modifier.fillMaxSize(),
+                    charactersListController = viewModel,
+                    navHostController = navHostController
+                )
+            }
+        }
     }
 }
 
