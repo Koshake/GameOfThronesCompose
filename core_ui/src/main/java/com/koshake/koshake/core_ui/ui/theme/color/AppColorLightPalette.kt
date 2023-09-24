@@ -35,5 +35,6 @@ val AppColorLightPalette: AppThemeColors = AppThemeColors(
     textTertiary = AppColor.White,
     textToolbar = AppColor.Black,
     toolbarColor = gradientToolbarLight,
-    bottomBarColor = AppColor.GrayDark
+    bottomBarColor = AppColor.GrayDark,
+    loaderColor = AppColor.BlackSmoky
 )

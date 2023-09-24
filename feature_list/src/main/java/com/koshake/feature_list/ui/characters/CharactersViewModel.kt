@@ -1,16 +1,19 @@
 package com.koshake.feature_list.ui.characters
 
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavHostController
 import com.koshake.core_api.base.StatefulViewModel
 import com.koshake.core_api.base.onEachContent
 import com.koshake.core_api.base.onEachError
-import com.koshake.core_api.entity.Name
 import com.koshake.feature_list.domain.repository.CharactersListRepository
+import com.koshake.feature_list.navigation.navigateToQuotesList
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import timber.log.Timber
 
 class CharactersViewModel @AssistedInject constructor(
@@ -35,14 +38,19 @@ class CharactersViewModel @AssistedInject constructor(
                 }
             }
             .onEachError {
-                Timber.e("getHousesList Error: ${it.message}")
+                Timber.e("getCharactersList Error: ${it.message}")
                 updateState { copy(isLoading = false, isError = true) }
             }
             .launchIn(viewModelScope)
     }
 
-    override fun onListItemClicked(item: CharacterItem) {
+    override fun onListItemClicked(navHostController: NavHostController, item: CharacterItem) {
+        val characterFullNameEncoded = Json.encodeToString(item.name)
+        navigateToQuotesList(navController = navHostController, encodedName = characterFullNameEncoded)
+    }
 
+    override fun onRefresh() {
+        getCharactersList(state.house)
     }
 
     @AssistedFactory

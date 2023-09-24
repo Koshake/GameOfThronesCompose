@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [HousesListModule::class, CharactersModule::class, ViewModelFactoryModule::class],
+    modules = [HousesListModule::class, CharactersModule::class, QuotesModule::class, ViewModelFactoryModule::class],
     dependencies = [FacadeComponentProvider::class]
 )
 interface ListComponent {

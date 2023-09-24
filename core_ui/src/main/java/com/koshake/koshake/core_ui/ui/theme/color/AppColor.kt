@@ -17,7 +17,6 @@ internal object AppColor {
     internal val GrayDark: Color = Color(0xFF666666)
     internal val GrayLight: Color = Color(0xFFCCCCCC)
     internal val GrayMiddle: Color = Color(0xFF999999)
-    internal val Green: Color = Color(0xFF2FCF8C)
     internal val GrayCharleston: Color = Color(0xFF2A2A2A)
     internal val Orange: Color = Color(0xFFFF6736)
     internal val OrangeDark: Color = Color(0xFFEA4E1C)

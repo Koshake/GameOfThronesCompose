@@ -40,5 +40,6 @@ class HomeViewModel @Inject constructor(
 data class HomeScreenState(
     val randomQuoteUi: RandomQuoteUi = RandomQuoteUi(),
     val isLoading: Boolean = false,
-    val isError: Boolean = false
+    val isError: Boolean = false,
+    val isRefreshing: Boolean = false
 )

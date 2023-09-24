@@ -29,7 +29,8 @@ data class AppThemeColors(
     val textTertiary: Color,
     val textToolbar: Color,
     val toolbarColor: GradientColor,
-    val bottomBarColor: Color
+    val bottomBarColor: Color,
+    val loaderColor: Color,
 )
 
 data class GradientColor(
