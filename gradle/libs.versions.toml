@@ -44,6 +44,10 @@ espressoCore = "3.4.0"
 
 ktor = "1.6.4"
 
+mockito = "5.1.0"
+coroutinesTest = "1.7.3"
+turbine = "1.0.0"
+
 [libraries]
 
 #compose
@@ -92,6 +96,9 @@ core-testing = { group = "androidx.arch.core", name = "core-testing", version.re
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-androidx = { group = "androidx.test.ext", name = "junit", version.ref = "junitAndroidX" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito"}
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest"}
+turbine-testing = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine"}
 
 gradle-api = { group = "com.android.tools.build", name = "gradle-api", version.ref = "androidGradlePlugin" }
 
@@ -110,7 +117,10 @@ timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "tim
 android-testing = [
     "core-testing",
     "junit-androidx",
-    "espresso-core"
+    "espresso-core",
+    "mockito-kotlin",
+    "coroutines-test",
+    "turbine-testing"
 ]
 
 androidx-lifecycle = [

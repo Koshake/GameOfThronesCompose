@@ -54,6 +54,9 @@ dependencies {
     //Timber
     implementation libs.timber
 
+    //Testing
+    testImplementation libs.bundles.android.testing
+
     implementation project(':feature_home-api')
     implementation project(':core_api')
     implementation project(':core_ui')
