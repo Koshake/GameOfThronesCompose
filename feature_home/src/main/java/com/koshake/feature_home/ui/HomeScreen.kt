@@ -19,12 +19,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.koshake.feature_home.R
+import com.koshake.feature_home.utils.TestTags.HOME_CHARACTER_NAME_TEXT
+import com.koshake.feature_home.utils.TestTags.HOME_CHARACTER_QUOTE_TEXT
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesDimension
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTheme
 import com.koshake.koshake.core_ui.ui.theme.GameOfThronesTypography
@@ -65,7 +68,7 @@ fun HomeScreen(
 @Composable
 private fun HomeScreenContent(state: HomeScreenState, controller: HomeScreenController, modifier: Modifier) {
 
-    val pullRefreshState = rememberPullRefreshState(state.isRefreshing,  controller::onRefresh)
+    val pullRefreshState = rememberPullRefreshState(state.isRefreshing, controller::onRefresh)
 
     Column(
         modifier = modifier
@@ -76,7 +79,8 @@ private fun HomeScreenContent(state: HomeScreenState, controller: HomeScreenCont
         PullRefreshIndicator(
             refreshing = state.isRefreshing,
             state = pullRefreshState,
-            modifier = Modifier.align(Alignment.CenterHorizontally))
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
 
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -88,7 +92,8 @@ private fun HomeScreenContent(state: HomeScreenState, controller: HomeScreenCont
                     Text(
                         text = String.format("%s:", state.randomQuoteUi.name),
                         style = GameOfThronesTypography.titleBook34,
-                        textAlign = TextAlign.Start
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.testTag(HOME_CHARACTER_NAME_TEXT)
                     )
                     VSpacer(size = 48.dp)
                 }
@@ -99,6 +104,7 @@ private fun HomeScreenContent(state: HomeScreenState, controller: HomeScreenCont
                         stringResource(id = R.string.no_quotes)
                     },
                     style = GameOfThronesTypography.titleBook44,
+                    modifier = Modifier.testTag(HOME_CHARACTER_QUOTE_TEXT)
                 )
                 VSpacer(size = 48.dp)
             }
