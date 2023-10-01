@@ -39,6 +39,12 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.7"
+    }
 }
 
 dependencies {
@@ -54,6 +60,15 @@ dependencies {
 
     //Timber
     implementation libs.timber
+
+    //Compose
+    //Compose
+    implementation libs.bundles.compose
+
+    //Testing
+    testImplementation libs.bundles.android.testing
+    androidTestImplementation libs.compose.tests
+    debugImplementation libs.compose.tests.debug
 
     // Modules
     implementation project(':core_factory')

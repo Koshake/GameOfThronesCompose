@@ -16,7 +16,7 @@ import com.koshake.main.ui.navigation.BottomBar
 import com.koshake.main.ui.navigation.BottomTabs
 
 @Composable
-internal fun MainScreen(
+fun MainScreen(
     homeNavGraphHandler: NavGraphHandler,
     listNavGraphHandler: NavGraphHandler
 ) {
